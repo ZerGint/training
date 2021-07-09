@@ -98,12 +98,12 @@ public class Gift {
 
 	}
 
-	//сортировка
+	// сортировка
 	public void sortByWeight() {
 		Collections.sort(candies);
 	}
 
-	//список конфет с содержанием сахара в заданном диапазоне
+	// список конфет с содержанием сахара в заданном диапазоне
 	public List<Sweet> getSweetWithSugarBetweenValues(int min, int max) {
 
 		List<Sweet> returnSweet = new ArrayList<>();

@@ -27,15 +27,17 @@ public class Run {
 		System.out.println("Вес подарка = " + gift.getWeight());
 
 		// вывод отсортированного подарка по весу
-		
+
 		gift.sortByWeight();
 		System.out.println("Подарок sorted:");
 		for (Sweet sw : gift.getCandies()) {
+
 			System.out.println(sw);
 
 		}
 
 		// данные для задания диапазона сахара
+
 		int minSugar = 2;
 		int maxSugar = 4;
 
