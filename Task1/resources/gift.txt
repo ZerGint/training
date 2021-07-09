@@ -1,0 +1,8 @@
+Nestle CHOCOLATE 1 1 black 2
+ChupaChups LOLLIPOP 6 2 lime 2
+Buratino CANDY 3 5 chocolate 1
+Error1 CANDY3 8 6 chocolate 2
+Buratino3        CANDY 4 5 chocolate    2
+      ChupaChups2     LOLLIPOP 4 3 lime    3
+Error2 CANDY 8 6 chocolate d
+Error3 CANDY 8 6 chocolate 
