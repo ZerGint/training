@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
+import entity2.TextEditor;
+
 public class Run {
 
 	public static void main(String[] args) {
@@ -17,22 +19,22 @@ public class Run {
 
 			while ((line = reader.readLine()) != null) {
 
-				// System.out.println(line);
-
 				text.append(line);
-
 			}
 
 		} catch (Exception e) {
 			System.out.println("error");
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
-		System.out.println(text);
+
+		TextEditor textEditor = new TextEditor();
+		String inputText = text.toString();
+
+		System.out.println(inputText);
+
+		System.out.println();
+
+		System.out.println(textEditor.sortedOutput(inputText));
 
 	}
 
