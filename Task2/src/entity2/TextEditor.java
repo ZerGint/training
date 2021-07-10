@@ -1,4 +1,4 @@
-package entity;
+package entity2;
 
 public class TextEditor {
 
