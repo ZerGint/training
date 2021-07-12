@@ -40,7 +40,7 @@ public class Gift {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
 
-			String line;
+			String line=reader.readLine();
 
 			while ((line = reader.readLine()) != null) {
 				name = null;
@@ -50,7 +50,7 @@ public class Gift {
 				feature = null;
 				count = 0;
 
-				System.out.println(line);
+				// System.out.println(line);
 
 				s = line.trim().replaceAll(" +", " ").split(" ");
 
@@ -64,35 +64,36 @@ public class Gift {
 
 				} catch (ArrayIndexOutOfBoundsException e) {
 
-					System.out.println("ERROR. Не хватает данных ");
-					System.out.println("пропускаем...");
-
+					System.out.println("ERROR. Не хватает данных. Пропускаем... ");
 					continue;
 
 				} catch (NumberFormatException e) {
 
-					System.out.println("ERROR. Неправильные данные ");
-					System.out.println("пропускаем...");
-
+					System.out.println("ERROR. Неправильные тип данных. Пропускаем... ");
 					continue;
+
 				} catch (Exception e) {
 
-					System.out.println("ERROR. Нет такого типа конфет: " + s[1]);
-					System.out.println("пропускаем...");
-
+					System.out.println("ERROR. Нет такого типа конфет: " + s[1] + " Пропускаем...");
 					continue;
 				}
 
-				for (int i = 0; i < count; i++) {
+				try {
+					for (int i = 0; i < count; i++) {
 
-					candies.add((new SweetFactory()).getSweet(name, type, weight, sugar, feature));
+						candies.add((new SweetFactory()).getSweet(name, type, weight, sugar, feature));
 
+					}
+				} catch (IllegalArgumentException e) {
+
+					System.out.println("ERROR. Неправильная особенность: " + feature);
+					continue;
 				}
 
 			}
 
 		} catch (Exception e) {
-			System.out.println("error");
+			System.out.println("Error ");
 			e.printStackTrace();
 		}
 

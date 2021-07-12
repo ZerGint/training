@@ -24,7 +24,7 @@ public class Run {
 
 		// вывод веса подарка
 
-		System.out.println("Вес подарка = " + gift.getWeight());
+		System.out.println("Вес подарка = " + gift.getWeight() + "\n");
 
 		// вывод отсортированного подарка по весу
 
@@ -39,10 +39,10 @@ public class Run {
 		// данные для задания диапазона сахара
 
 		int minSugar = 2;
-		int maxSugar = 4;
-
+		int maxSugar = 5;
+		System.out.println();
 		System.out.println("сахар в диапазоне [" + minSugar + "," + maxSugar + "]:");
-		for (Sweet sw : gift.getSweetWithSugarBetweenValues(2, 4)) {
+		for (Sweet sw : gift.getSweetWithSugarBetweenValues(minSugar, maxSugar)) {
 			System.out.println(sw);
 
 		}
