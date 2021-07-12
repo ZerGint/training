@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import Exception.NotPositiveException;
+import exception.NotPositiveException;
 
 public class Gift {
 
 	private List<Sweet> candies = new ArrayList<>();
 
 	public void add(Sweet sweet) {
-
+		
 		candies.add(sweet);
 	}
 
@@ -22,10 +22,8 @@ public class Gift {
 
 		int weight = 0;
 		for (Sweet sweet : candies) {
-
 			weight = weight + sweet.getWeight();
 		}
-
 		return weight;
 	}
 
@@ -87,13 +85,11 @@ public class Gift {
 					for (int i = 0; i < count; i++) {
 
 						candies.add((new SweetFactory()).getSweet(name, type, weight, sugar, feature));
-
 					}
 				} catch (IllegalArgumentException e) {
 					System.out.println("ERROR. Неправильная особенность: " + feature);
 					continue;
 				}
-
 			}
 
 		} catch (Exception e) {
@@ -104,11 +100,13 @@ public class Gift {
 	}
 
 	// сортировка
+
 	public void sortByWeight() {
 		Collections.sort(candies);
 	}
 
 	// список конфет с содержанием сахара в заданном диапазоне
+
 	public List<Sweet> getSweetWithSugarBetweenValues(int min, int max) {
 
 		List<Sweet> returnSweet = new ArrayList<>();
@@ -132,7 +130,6 @@ public class Gift {
 
 	@Override
 	public String toString() {
-
 		return ("Gift :\n " + candies);
 	}
 
