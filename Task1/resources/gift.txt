@@ -9,6 +9,6 @@ ChupaChups2 LOLLIPOP   4        3      lime           3
 Error2      CANDY      8        6      CHOCOLATE      d
 Error3      CANDY      8        6      CHOCOLATE 
 NUTS        CANDY      3        5      NUT            1
-NUTS2       CANDY      3        5      NUT1           2
+NUTS2       CANDY      3        5      NUT1           0
 NUTS3       CANDY      3        5      CHOCOLATE      2
 ChupaChups3 LOLLIPOP   3        6      APPLE          1

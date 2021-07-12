@@ -7,12 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import exception.NotPositiveException;
+
 public class Gift {
 
 	private List<Sweet> candies = new ArrayList<>();
 
 	public void add(Sweet sweet) {
-
+		
 		candies.add(sweet);
 	}
 
@@ -20,10 +22,8 @@ public class Gift {
 
 		int weight = 0;
 		for (Sweet sweet : candies) {
-
 			weight = weight + sweet.getWeight();
 		}
-
 		return weight;
 	}
 
@@ -40,7 +40,7 @@ public class Gift {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
 
-			String line=reader.readLine();
+			String line = reader.readLine();
 
 			while ((line = reader.readLine()) != null) {
 				name = null;
@@ -49,8 +49,6 @@ public class Gift {
 				sugar = 0;
 				feature = null;
 				count = 0;
-
-				// System.out.println(line);
 
 				s = line.trim().replaceAll(" +", " ").split(" ");
 
@@ -62,18 +60,23 @@ public class Gift {
 					feature = s[4];
 					count = Integer.parseInt(s[5]);
 
-				} catch (ArrayIndexOutOfBoundsException e) {
+					if (weight <= 0 || sugar <= 0 || count < 0) {
+						throw new NotPositiveException();
+					}
 
+				} catch (NotPositiveException e) {
+					System.out.println("ERROR. Данные должны быть больше 0. Пропускаем... ");
+					continue;
+
+				} catch (ArrayIndexOutOfBoundsException e) {
 					System.out.println("ERROR. Не хватает данных. Пропускаем... ");
 					continue;
 
 				} catch (NumberFormatException e) {
-
 					System.out.println("ERROR. Неправильные тип данных. Пропускаем... ");
 					continue;
 
 				} catch (Exception e) {
-
 					System.out.println("ERROR. Нет такого типа конфет: " + s[1] + " Пропускаем...");
 					continue;
 				}
@@ -82,14 +85,11 @@ public class Gift {
 					for (int i = 0; i < count; i++) {
 
 						candies.add((new SweetFactory()).getSweet(name, type, weight, sugar, feature));
-
 					}
 				} catch (IllegalArgumentException e) {
-
 					System.out.println("ERROR. Неправильная особенность: " + feature);
 					continue;
 				}
-
 			}
 
 		} catch (Exception e) {
@@ -100,11 +100,13 @@ public class Gift {
 	}
 
 	// сортировка
+
 	public void sortByWeight() {
 		Collections.sort(candies);
 	}
 
 	// список конфет с содержанием сахара в заданном диапазоне
+
 	public List<Sweet> getSweetWithSugarBetweenValues(int min, int max) {
 
 		List<Sweet> returnSweet = new ArrayList<>();
@@ -128,7 +130,6 @@ public class Gift {
 
 	@Override
 	public String toString() {
-
 		return ("Gift :\n " + candies);
 	}
 

@@ -5,13 +5,14 @@ public class Candy extends Sweet {
 	private CandyFeature feature;
 
 	public Candy(String name, int weight, int sugar, CandyFeature feature) {
-		super(name, weight, sugar);
 
+		super(name, weight, sugar);
 		this.feature = feature;
 
 	}
 
 	public CandyFeature getFeature() {
+
 		return feature;
 	}
 
@@ -19,9 +20,6 @@ public class Candy extends Sweet {
 	public String toString() {
 		return String.format("Конфета [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
 				getFeature().toString(), getWeight(), getSugar());
-		// return "Конфета [ Название: " + getName() + " ,особенность: " +
-		// getFeature().toString() + " ,вес: " + getWeight()
-		// + " ,сахар: " + getSugar() + "]";
 	}
 
 	@Override
