@@ -2,14 +2,14 @@ package entity;
 
 public class Lollipop extends Sweet {
 
-	private String feature;
+	private LollipopFeature feature;
 
-	public Lollipop(String name, int weight, int sugar, String feature) {
+	public Lollipop(String name, int weight, int sugar, LollipopFeature feature) {
 		super(name, weight, sugar);
 		this.feature = feature;
 	}
 
-	public String getFeature() {
+	public LollipopFeature getFeature() {
 		return feature;
 	}
 
@@ -40,8 +40,8 @@ public class Lollipop extends Sweet {
 
 	@Override
 	public String toString() {
-		return "Леденец [ Название: " + getName() + " ,особенность: " + getFeature() + " ,вес: " + getWeight()
-				+ " ,сахар: " + getSugar() + "]";
+		return String.format("Леденец [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
+				getFeature().toString(), getWeight(), getSugar());
 	}
 
 }

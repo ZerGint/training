@@ -1,8 +1,14 @@
-Nestle CHOCOLATE 1 1 black 2
-ChupaChups LOLLIPOP 6 2 lime 2
-Buratino CANDY 3 5 chocolate 1
-Error1 CANDY3 8 6 chocolate 2
-Buratino3        CANDY 4 5 chocolate    2
-      ChupaChups2     LOLLIPOP 4 3 lime    3
-Error2 CANDY 8 6 chocolate d
-Error3 CANDY 8 6 chocolate 
+НАЗВАНИЕ      ВИД     ВЕС     САХАР   ОСОБЕННОСТЬ   КОЛИЧЕСТВО
+Nestle      CHOCOLATE  1        1      BLACK          1
+ChupaChups  LOLLIPOP   6        2      LIME           2
+Buratino    CANDY      3        5      CHOCOeLATE     1
+Аленка      CHOCOLATE  3        5      WHITE          1
+Error1      CANDY3     8        6      CHOCOLATE      2
+Buratino3   CANDY      4        5      CHOCOLATE      2
+ChupaChups2 LOLLIPOP   4        3      lime           3
+Error2      CANDY      8        6      CHOCOLATE      d
+Error3      CANDY      8        6      CHOCOLATE 
+NUTS        CANDY      3        5      NUT            1
+NUTS2       CANDY      3        5      NUT1           2
+NUTS3       CANDY      3        5      CHOCOLATE      2
+ChupaChups3 LOLLIPOP   3        6      APPLE          1

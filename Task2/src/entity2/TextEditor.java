@@ -10,12 +10,12 @@ public class TextEditor {
 
 	// формирование отсортированного текста по кол-во слов в предложениях
 
-	public String sortedOutput(String text) {
+	public String sortedOutputByCountWords(String text) {
 
 		StringBuilder outputText = new StringBuilder();
 		insertPairs(splitText(text.replaceAll("\\s+", " ")));
 		Collections.sort(listTextPair);
-		
+
 		for (TextPair pair : listTextPair) {
 			outputText.append(pair.text + " ");
 		}
@@ -41,9 +41,10 @@ public class TextEditor {
 	private List<String> splitText(String text) {
 		List<String> sentences = new ArrayList<>();
 		StringBuilder words = new StringBuilder();
-
+		text += " ";
 		for (int i = 0; i < text.length(); i++) {
-			if ((text.charAt(i) == '.') || (text.charAt(i) == '!') || (text.charAt(i) == '?')) {
+			if (((text.charAt(i) == '.') || (text.charAt(i) == '!') || (text.charAt(i) == '?'))
+					&& (text.charAt(i + 1) == ' ')) {
 				words.append(text.charAt(i));
 				sentences.add(words.toString().trim());
 				words = new StringBuilder();

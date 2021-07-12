@@ -16,9 +16,7 @@ public class Run {
 		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 
 			String line;
-
 			while ((line = reader.readLine()) != null) {
-
 				text.append(line);
 			}
 
@@ -34,7 +32,7 @@ public class Run {
 
 		System.out.println();
 
-		System.out.println(textEditor.sortedOutput(inputText));
+		System.out.println(textEditor.sortedOutputByCountWords(inputText));
 
 	}
 

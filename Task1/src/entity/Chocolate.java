@@ -2,15 +2,15 @@ package entity;
 
 public class Chocolate extends Sweet {
 
-	private String feature;
+	private ChocolateFeature feature;
 
-	public Chocolate(String name, int weight, int sugar, String color) {
+	public Chocolate(String name, int weight, int sugar, ChocolateFeature feature) {
 		super(name, weight, sugar);
 
-		this.feature = color;
+		this.feature = feature;
 	}
 
-	public String getFeature() {
+	public ChocolateFeature getFeature() {
 		return feature;
 	}
 
@@ -41,8 +41,8 @@ public class Chocolate extends Sweet {
 
 	@Override
 	public String toString() {
-		return "Шоколад [ Название: " + getName() + " ,особенность: " + getFeature() + " ,вес: " + getWeight()
-				+ " ,сахар: " + getSugar() + "]";
+		return String.format("Шоколад [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
+				getFeature().toString(), getWeight(), getSugar());
 	}
 
 }
