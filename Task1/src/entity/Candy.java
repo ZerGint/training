@@ -2,23 +2,26 @@ package entity;
 
 public class Candy extends Sweet {
 
-	private String feature;
+	private CandyFeature feature;
 
-	public Candy(String name, int weight, int sugar, String filling) {
+	public Candy(String name, int weight, int sugar, CandyFeature feature) {
 		super(name, weight, sugar);
 
-		this.feature = filling;
+		this.feature = feature;
 
 	}
 
-	public String getFeature() {
+	public CandyFeature getFeature() {
 		return feature;
 	}
 
 	@Override
 	public String toString() {
-		return "Конфета [ Название: " + getName() + " ,особенность: " + getFeature() + " ,вес: " + getWeight()
-				+ " ,сахар: " + getSugar() + "]";
+		return String.format("Конфета [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
+				getFeature().toString(), getWeight(), getSugar());
+		// return "Конфета [ Название: " + getName() + " ,особенность: " +
+		// getFeature().toString() + " ,вес: " + getWeight()
+		// + " ,сахар: " + getSugar() + "]";
 	}
 
 	@Override
