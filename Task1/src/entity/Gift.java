@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import Exception.NotPositiveException;
+
 public class Gift {
 
 	private List<Sweet> candies = new ArrayList<>();
@@ -40,7 +42,7 @@ public class Gift {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
 
-			String line=reader.readLine();
+			String line = reader.readLine();
 
 			while ((line = reader.readLine()) != null) {
 				name = null;
@@ -49,8 +51,6 @@ public class Gift {
 				sugar = 0;
 				feature = null;
 				count = 0;
-
-				// System.out.println(line);
 
 				s = line.trim().replaceAll(" +", " ").split(" ");
 
@@ -62,18 +62,23 @@ public class Gift {
 					feature = s[4];
 					count = Integer.parseInt(s[5]);
 
-				} catch (ArrayIndexOutOfBoundsException e) {
+					if (weight <= 0 || sugar <= 0 || count < 0) {
+						throw new NotPositiveException();
+					}
 
+				} catch (NotPositiveException e) {
+					System.out.println("ERROR. Данные должны быть больше 0. Пропускаем... ");
+					continue;
+
+				} catch (ArrayIndexOutOfBoundsException e) {
 					System.out.println("ERROR. Не хватает данных. Пропускаем... ");
 					continue;
 
 				} catch (NumberFormatException e) {
-
 					System.out.println("ERROR. Неправильные тип данных. Пропускаем... ");
 					continue;
 
 				} catch (Exception e) {
-
 					System.out.println("ERROR. Нет такого типа конфет: " + s[1] + " Пропускаем...");
 					continue;
 				}
@@ -85,7 +90,6 @@ public class Gift {
 
 					}
 				} catch (IllegalArgumentException e) {
-
 					System.out.println("ERROR. Неправильная особенность: " + feature);
 					continue;
 				}
