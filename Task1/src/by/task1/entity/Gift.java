@@ -1,4 +1,4 @@
-package entity;
+package by.task1.entity;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import exception.NotPositiveException;
+import by.task1.exception.NotPositiveException;
 
 public class Gift {
 
 	private List<Sweet> candies = new ArrayList<>();
 
 	public void add(Sweet sweet) {
-		
+
 		candies.add(sweet);
 	}
 

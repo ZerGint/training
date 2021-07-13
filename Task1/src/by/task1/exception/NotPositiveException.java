@@ -1,4 +1,4 @@
-package exception;
+package by.task1.exception;
 
 public class NotPositiveException extends Exception {
 

@@ -1,4 +1,4 @@
-package entity;
+package by.task1.entity;
 
 public class SweetFactory {
 

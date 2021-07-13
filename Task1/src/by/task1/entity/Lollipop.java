@@ -1,25 +1,16 @@
-package entity;
+package by.task1.entity;
 
-public class Candy extends Sweet {
+public class Lollipop extends Sweet {
 
-	private CandyFeature feature;
+	private LollipopFeature feature;
 
-	public Candy(String name, int weight, int sugar, CandyFeature feature) {
-
+	public Lollipop(String name, int weight, int sugar, LollipopFeature feature) {
 		super(name, weight, sugar);
 		this.feature = feature;
-
 	}
 
-	public CandyFeature getFeature() {
-
+	public LollipopFeature getFeature() {
 		return feature;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("Конфета [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
-				getFeature().toString(), getWeight(), getSugar());
 	}
 
 	@Override
@@ -38,13 +29,19 @@ public class Candy extends Sweet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Candy other = (Candy) obj;
+		Lollipop other = (Lollipop) obj;
 		if (feature == null) {
 			if (other.feature != null)
 				return false;
 		} else if (!feature.equals(other.feature))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Леденец [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
+				getFeature().toString(), getWeight(), getSugar());
 	}
 
 }

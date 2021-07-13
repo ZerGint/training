@@ -1,4 +1,4 @@
-package entity2;
+package by.task2.entity;
 
 import java.util.ArrayList;
 import java.util.Collections;

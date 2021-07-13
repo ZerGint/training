@@ -1,10 +1,10 @@
-package run2;
+package by.task2.run;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-import entity2.TextEditor;
+import by.task2.entity.TextEditor;
 
 public class Run {
 

@@ -1,9 +1,9 @@
-package run;
+package by.task1.run;
 
 import java.io.File;
 
-import entity.Gift;
-import entity.Sweet;
+import by.task1.entity.Gift;
+import by.task1.entity.Sweet;
 
 public class Run {
 

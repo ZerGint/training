@@ -1,15 +1,16 @@
-package entity;
+package by.task1.entity;
 
-public class Lollipop extends Sweet {
+public class Chocolate extends Sweet {
 
-	private LollipopFeature feature;
+	private ChocolateFeature feature;
 
-	public Lollipop(String name, int weight, int sugar, LollipopFeature feature) {
+	public Chocolate(String name, int weight, int sugar, ChocolateFeature feature) {
 		super(name, weight, sugar);
+
 		this.feature = feature;
 	}
 
-	public LollipopFeature getFeature() {
+	public ChocolateFeature getFeature() {
 		return feature;
 	}
 
@@ -29,7 +30,7 @@ public class Lollipop extends Sweet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Lollipop other = (Lollipop) obj;
+		Chocolate other = (Chocolate) obj;
 		if (feature == null) {
 			if (other.feature != null)
 				return false;
@@ -40,7 +41,7 @@ public class Lollipop extends Sweet {
 
 	@Override
 	public String toString() {
-		return String.format("Леденец [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
+		return String.format("Шоколад [ Название: %10s ,особенность: %9s ,вес: %2d ,сахар: %2d ", getName(),
 				getFeature().toString(), getWeight(), getSugar());
 	}
 

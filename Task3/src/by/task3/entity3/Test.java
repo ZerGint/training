@@ -1,4 +1,4 @@
-package entity3;
+package by.task3.entity3;
 
 public class Test {
 
