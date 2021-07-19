@@ -1,6 +1,7 @@
 package by.task2.entity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,6 +21,9 @@ public class TextEditor {
 			outputText.append(pair.text + " ");
 		}
 
+		/**
+		 * for (TextPair t : listTextPair) { System.out.println(t); }
+		 **/
 		return outputText.toString();
 	}
 
@@ -40,19 +44,21 @@ public class TextEditor {
 
 	private List<String> splitText(String text) {
 		List<String> sentences = new ArrayList<>();
-		StringBuilder words = new StringBuilder();
-		text += " ";
-		for (int i = 0; i < text.length(); i++) {
-			if (((text.charAt(i) == '.') || (text.charAt(i) == '!') || (text.charAt(i) == '?'))
-					&& (text.charAt(i + 1) == ' ')) {
-				words.append(text.charAt(i));
-				sentences.add(words.toString().trim());
-				words = new StringBuilder();
-			} else {
-				words.append(text.charAt(i));
-			}
-		}
 
+		text = text.replaceAll("\\. ", ".  ");
+		text = text.replaceAll("\\! ", "!  ");
+		text = text.replaceAll("\\? ", "?  ");
+
+		sentences = Arrays.asList(text.split("  "));
+
+		/**
+		 * StringBuilder words = new StringBuilder(); text += " ";
+		 * 
+		 * for (int i = 0; i < text.length(); i++) { if (((text.charAt(i) == '.') ||
+		 * (text.charAt(i) == '!') || (text.charAt(i) == '?')) && (text.charAt(i + 1) ==
+		 * ' ')) { words.append(text.charAt(i)); sentences.add(words.toString().trim());
+		 * words = new StringBuilder(); } else { words.append(text.charAt(i)); } }
+		 **/
 		return sentences;
 	}
 
@@ -72,6 +78,11 @@ public class TextEditor {
 		public int compareTo(TextPair textPair) {
 
 			return (this.count - textPair.count);
+		}
+
+		@Override
+		public String toString() {
+			return "TextPair [text=" + text + ", count=" + count + "]";
 		}
 
 	}
